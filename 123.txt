@@ -10,3 +10,14 @@ types of variales:
 var,let, const
 var--global variale
 let, const--local variable
+
+types of datatypes:
+1.Primitive datatypes
+2.Non-Primitive datatypes
+
+primitive--number,string,boolean,null,undefined
+non-primitive--array,object
+
+typeof()---to know the type of datatypes
+
+this,window command to display the functions of js
