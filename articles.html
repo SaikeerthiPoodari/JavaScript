@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>4-Column Articles Grid</title>
+  <script>
+    function bgChange(color){
+        document.body.style.backgroundColor=color;
+    }
+  </script>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --muted:#666;
+      --accent:#0b6efd;
+      --radius:12px;
+      --gap:20px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#222;
+      padding:32px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    header{margin-bottom:18px}
+    header h1{margin:0;font-size:28px}
+    header p{margin:6px 0 0;color:var(--muted)}
+
+    /* grid: 4 columns on wide screens, responsive down to 1 on mobile */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:var(--gap);
+      align-items:start;
+    }
+
+    /* responsive breakpoints */
+    @media (max-width:1000px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      .grid{grid-template-columns:1fr}
+      body{padding:18px}
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(20,30,60,0.06);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform .18s ease, box-shadow .18s ease;
+      min-height:360px;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(20,30,60,0.12)}
+
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .card-content{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0 0 14px;color:var(--muted);line-height:1.5}
+
+    .meta{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+    .btn{
+      display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;
+      border:none;background:var(--accent);color:white;font-size:13px;cursor:pointer
+    }
+    .read-time{font-size:13px;color:var(--muted)}
+
+    /* small utility */
+    .kicker{font-size:12px;color:var(--accent);font-weight:700;margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Latest Articles</h1>
+      <p>Four featured articles laid out in a responsive four-column grid. Resize the window to see the layout adapt.</p>
+    </header>
+
+    <main class="grid">
+
+      <article class="card">
+        <img src="https://picsum.photos/seed/alpha/800/600" alt="Scenic landscape" />
+        <button class="btn" onclick="bgChange('yellow')" >Change BG color</button>
+        <div class="card-content">
+          <div class="kicker">Travel</div>
+          <h3>Exploring the Mountains: A Weekend Guide</h3>
+          <p>Discover hidden trails, the best local eats, and packing tips for a short mountain escape. Perfect for beginners and experienced hikers alike.</p>
+          <div class="meta">
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://picsum.photos/seed/bravo/800/600" alt="Person working on laptop" />
+        <button class="btn" onclick="bgChange('blue')" >Change BG color</button>
+
+        <div class="card-content">
+          <div class="kicker">Productivity</div>
+          <h3>Focus Hacks That Actually Work</h3>
+          <p>Short, actionable techniques backed by research to help you get more done in less time — without burning out.</p>
+          <div class="meta">
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://picsum.photos/seed/charlie/800/600" alt="Delicious food on plate" />
+        <button class="btn" onclick="bgChange('red')" >Change BG color</button>
+
+        <div class="card-content">
+          <div class="kicker">Food</div>
+          <h3>5 Easy Weeknight Recipes</h3>
+          <p>Quick, healthy dinners you can make in 30 minutes with pantry staples and minimal clean-up. Great for busy evenings.</p>
+          <div class="meta">
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://picsum.photos/seed/delta/800/600" alt="Modern interior design" />
+        <button class="btn" onclick="bgChange('orange')" >Change BG color</button>
+
+        <div class="card-content">
+          <div class="kicker">Design</div>
+          <h3>Minimalist Interiors: Where to Start</h3>
+          <p>Practical steps to declutter your living space and create a calm, functional home environment without sacrificing style.</p>
+          <div class="meta">
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+  </div>
+</body>
+</html>
