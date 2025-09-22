@@ -21,3 +21,6 @@ non-primitive--array,object
 typeof()---to know the type of datatypes
 
 this,window command to display the functions of js
+
+function: To Perfom the multiple task with single code
+

@@ -1,5 +1,3 @@
-const { type } = require("express/lib/response");
-
 a=890;
 console.log(typeof a)
 username="keerthi";
