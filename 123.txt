@@ -1,0 +1,12 @@
+Js is a scripting language used to interactivity 
+js is used  to validate the functionality
+it is also used to create the APIs and test
+js also used for interactivity b/w the frontend and backend
+JS is having document object model features
+
+to link html and js----->  <script src="app.js"/>
+
+types of variales:
+var,let, const
+var--global variale
+let, const--local variable
